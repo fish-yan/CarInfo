@@ -113,6 +113,7 @@
         cell.infoTF.backgroundColor = UIColorFromRGB(0xEEEEEE);
     }else{
         cell.infoTF.userInteractionEnabled = YES;
+        cell.infoTF.backgroundColor = [UIColor whiteColor];
     }
     
     if ((indexPath.row >= 12 && indexPath.row <= 14) || indexPath.row == 16 || indexPath.row == 19 || indexPath.row == 20) {
