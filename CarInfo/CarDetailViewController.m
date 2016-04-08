@@ -88,8 +88,8 @@
 
 - (void)pickerCommiteBtnAction:(UIButton *)sender {
     NSInteger row = _pickerView.row;
-    _cell.infoTF.text = _pickerView.pickerArray[row];
-    [_dataDict setObject:_cell.infoTF.text forKey:_cell.titleLab.text];
+    NSString *str = _pickerView.pickerArray[row];
+    _cell.infoTF.text = str;
     [self.view endEditing:YES];
 }
 
@@ -140,6 +140,7 @@
 #pragma mark - UITextFieldDelegate
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
+    _cell = (CarInfoDetailCell *)textField.superview.superview;
     if(textField.tag == 3){
         _pickerView.pickerArray = @[@"test",@"test1",@"test2",@"test3",@"test4",@"test5",];
         //车辆品牌
